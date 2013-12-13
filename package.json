@@ -1,0 +1,31 @@
+{
+  "name": "tcx",
+  "version": "0.0.0",
+  "description": "parse tcx files, generating geojson",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mapbox/tcx.git"
+  },
+  "keywords": [
+    "tcx",
+    "geojson"
+  ],
+  "author": "Tom MacWright",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/mapbox/tcx/issues"
+  },
+  "homepage": "https://github.com/mapbox/tcx",
+  "dependencies": {
+    "htmlparser2": "~3.4.0",
+    "through2": "~0.2.3",
+    "through": "~2.3.4"
+  },
+  "devDependencies": {
+    "expect.js": "~0.2.0"
+  }
+}
