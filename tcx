@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+var tcx = require('./'),
+    concat = require('concat-stream'),
+    fs = require('fs'),
+    xmldom = new (require('xmldom').DOMParser)();
+
+if (process.stdin.isTTY && !process.argv[2]) return; // opt.showHelp();
+
+(process.argv.length > 2 ? fs.createReadStream(process.argv[2]) : process.stdin).pipe(concat(convert));
+
+function convert(data) { process.stdout.write(
+    JSON.stringify(tcx(xmldom.parseFromString(data.toString())), null, 4));
+}

@@ -21,9 +21,7 @@
   },
   "homepage": "https://github.com/mapbox/tcx",
   "dependencies": {
-    "htmlparser2": "~3.4.0",
-    "through2": "~0.2.3",
-    "through": "~2.3.4"
+    "xmldom": "~3.4.0"
   },
   "devDependencies": {
     "expect.js": "~0.2.0"

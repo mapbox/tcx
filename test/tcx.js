@@ -1,14 +1,11 @@
-var makeParser = require('../'),
+var parse = require('../'),
     expect = require('expect.js'),
+    xmldom = new (require('xmldom').DOMParser)(),
     fs = require('fs');
 
 describe('tcx', function() {
-    it('parses tcx', function(done) {
-        var p = makeParser().on('data', function(d) {
-            expect(d.type).to.eql('Feature');
-            done();
-        });
-        fs.createReadStream('./test/run.tcx')
-            .pipe(p);
+    it('parses tcx', function() {
+        parse(xmldom.parseFromString(
+            fs.readFileSync('./test/run.tcx', 'utf8')));
     });
 });
