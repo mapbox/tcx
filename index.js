@@ -45,10 +45,24 @@ module.exports = function(doc) {
     var i,
         laps = get(doc, 'Lap'),
         // a feature collection
-        gj = fc();
+        gj = fc(),
+        totalMeters = 0,
+        startTime = '',
+        totalSeconds = 0;
+
+    gj.properties = {
+        totalMeters: 0,
+        totalSeconds: 0,
+        startTime: ''
+    };
+
     for (i = 0; i < laps.length; i++) {
         gj.features.push(getLinestring(laps[i]));
+        gj.properties.totalMeters += parseFloat(nodeVal(get1(laps[i], 'DistanceMeters')));
+        gj.properties.totalSeconds += parseFloat(nodeVal(get1(laps[i], 'TotalTimeSeconds')));
+        gj.properties.startTime += attr(laps[i], 'StartTime');
     }
+
     function getLinestring(node) {
         var j, pts = get(node, 'Trackpoint'), line = [];
         for (j = 0; j < pts.length; j++) {
@@ -63,6 +77,7 @@ module.exports = function(doc) {
             }
         };
     }
+
     function getProperties(node) {
         var meta = ['TotalTimeSeconds', 'DistanceMeters', 'Calories',
             'MaximumSpeed'],

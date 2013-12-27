@@ -4,7 +4,8 @@
   "description": "parse tcx files, generating geojson",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "mocha -R spec",
+    "build": "browserify -s tcx index.js > tcx.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "xmldom": "~3.4.0"
   },
   "devDependencies": {
-    "expect.js": "~0.2.0"
+    "expect.js": "~0.2.0",
+    "browserify": "~3.14.1"
   }
 }

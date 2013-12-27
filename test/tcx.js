@@ -5,7 +5,8 @@ var parse = require('../'),
 
 describe('tcx', function() {
     it('parses tcx', function() {
-        parse(xmldom.parseFromString(
-            fs.readFileSync('./test/run.tcx', 'utf8')));
+        expect(parse(xmldom.parseFromString(
+            fs.readFileSync('./test/run.tcx', 'utf8')))).to.eql(
+            JSON.parse(fs.readFileSync('./test/run.geojson')));
     });
 });

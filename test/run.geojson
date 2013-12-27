@@ -1,0 +1,37 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "TotalTimeSeconds": 2678,
+                "DistanceMeters": 6164.9,
+                "Calories": 530,
+                "MaximumSpeed": 8.7,
+                "starttime": "2009-08-30T13:41:31.000Z"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -77.02924,
+                        38.925836
+                    ],
+                    [
+                        -77.0293,
+                        38.925828
+                    ],
+                    [
+                        -77.029404,
+                        38.925813
+                    ]
+                ]
+            }
+        }
+    ],
+    "properties": {
+        "totalMeters": 6164.9,
+        "totalSeconds": 2678,
+        "startTime": "2009-08-30T13:41:31.000Z"
+    }
+}
