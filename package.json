@@ -24,6 +24,9 @@
   "dependencies": {
     "xmldom": "~3.4.0"
   },
+  "browser": {
+    "xmldom": false
+  },
   "devDependencies": {
     "expect.js": "~0.2.0",
     "browserify": "~3.14.1"
