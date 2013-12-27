@@ -1,0 +1,16 @@
+{
+  "name": "examples",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "glob": "~3.2.7",
+    "dsv": "0.0.3",
+    "xmldom": "~0.1.17"
+  }
+}
