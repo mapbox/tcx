@@ -44,6 +44,7 @@ if (typeof XMLSerializer !== 'undefined') {
 module.exports = function(doc) {
     var i,
         laps = get(doc, 'Lap'),
+        activity = get1(doc, 'Activity'),
         // a feature collection
         gj = fc(),
         totalMeters = 0,
@@ -53,7 +54,8 @@ module.exports = function(doc) {
     gj.properties = {
         totalMeters: 0,
         totalSeconds: 0,
-        startTime: ''
+        startTime: '',
+        sport: attr(activity, 'Sport')
     };
 
     for (i = 0; i < laps.length; i++) {

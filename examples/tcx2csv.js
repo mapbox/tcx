@@ -10,7 +10,8 @@ process.argv.slice(2).forEach(function(f) {
     rows.push({
         totalseconds: fc.properties.totalSeconds,
         totalmeters: fc.properties.totalMeters,
-        startime: fc.properties.startTime,
+        starttime: fc.properties.startTime,
+        sport: fc.properties.sport
     });
 });
 
