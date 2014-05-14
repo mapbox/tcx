@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/mapbox/tcx",
   "dependencies": {
-    "xmldom": "~3.4.0"
+    "xmldom": "~0.1.19"
   },
   "browser": {
     "xmldom": false
