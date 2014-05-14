@@ -32,6 +32,7 @@
     "properties": {
         "totalMeters": 6164.9,
         "totalSeconds": 2678,
-        "startTime": "2009-08-30T13:41:31.000Z"
+        "startTime": "2009-08-30T13:41:31.000Z",
+        "sport": "Running"
     }
 }
