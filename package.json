@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git://github.com/mapbox/tcx.git"
   },
+  "bin": {
+    "tcx": "tcx"
+  },
   "keywords": [
     "tcx",
     "geojson"
@@ -22,6 +25,7 @@
   },
   "homepage": "https://github.com/mapbox/tcx",
   "dependencies": {
+    "concat-stream": "^1.5.1",
     "xmldom": "~0.1.19"
   },
   "browser": {
