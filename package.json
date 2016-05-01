@@ -1,6 +1,6 @@
 {
   "name": "tcx",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "parse tcx files, generating geojson",
   "main": "index.js",
   "scripts": {
