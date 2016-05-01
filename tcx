@@ -2,13 +2,30 @@
 
 var tcx = require('./'),
     concat = require('concat-stream'),
+    geojsonStream = require('geojson-stream'),
     fs = require('fs'),
     xmldom = new (require('xmldom').DOMParser)();
 
-if (process.stdin.isTTY && !process.argv[2]) return; // opt.showHelp();
+if (process.stdin.isTTY && !process.argv[2]) return;
 
-(process.argv.length > 2 ? fs.createReadStream(process.argv[2]) : process.stdin).pipe(concat(convert));
+if (process.argv.length > 2) {
+    var stream = geojsonStream.stringify();
+    stream.pipe(process.stdout)
+    process.argv.slice(2).forEach(function(input) {
+        convertFile(fs.readFileSync(input, 'utf8')).features.forEach(function(feature) {
+            stream.write(feature);
+        });
+    });
+    stream.end();
+} else {
+    process.stdin.pipe(concat(convertStream));
+}
 
-function convert(data) { process.stdout.write(
-    JSON.stringify(tcx(xmldom.parseFromString(data.toString())), null, 4));
+function convertStream(data) {
+    process.stdout.write(
+        JSON.stringify(tcx(xmldom.parseFromString(data.toString())), null, 4));
+}
+
+function convertFile(data) {
+    return tcx(xmldom.parseFromString(data.toString()));
 }

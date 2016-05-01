@@ -26,3 +26,15 @@ parse(tcxDom);
 
 Given a DOM of TCX data either as a browser DOM object or via `xmldom` or
 `jsdom`, parse and return a GeoJSON FeatureCollection object.
+
+## binary
+
+    npm install tcx -g
+
+Usage with pipes:
+
+    $ tcx < tcxfile.tcx > geojsonfile.geojson
+
+Or with filenames
+
+    $ tcx tcxfile.tcx anothertcxfile.tcx > output.geojson
